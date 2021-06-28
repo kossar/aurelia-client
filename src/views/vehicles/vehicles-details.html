@@ -1,0 +1,14 @@
+<import from="../../components/vehicle-details-element"/>
+<h1>Details</h1>
+
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+    
+    <vehicle-details-element data.bind="data"></vehicle-details-element>
+    
+</div>
+<div>
+    <a load="/vehicle-edit(${data.id})">Edit</a> |
+    <a load="/vehicles-index">Back to List</a>
+</div>

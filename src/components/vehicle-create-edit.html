@@ -1,0 +1,28 @@
+<div class="form-group">
+    <label class="control-label" for="Vehicle_Make">Make</label>
+    <input class="form-control" type="text" 
+        data-val-required="The Make field is required." id="Vehicle_Make" minlength="1" maxlength="32" name="Vehicle.Make"
+        value.bind="vehicle.make" />
+</div>
+<div class="form-group">
+    <label class="control-label" for="Vehicle_Model">Model</label>
+    <input class="form-control" type="text" data-val="true" id="Vehicle_Model"  maxlength="32" name="Vehicle.Model" value.bind="vehicle.model" />
+</div>
+<div class="form-group">
+    <label class="control-label" for="Vehicle_ReleaseDate">ReleaseDate</label>
+    <input class="form-control" type="date" data-val="true" id="Vehicle_ReleaseDate"
+        name="Vehicle.ReleaseDate" value.bind="vehicle.releaseDate" />
+</div>
+<div class="form-group">
+    <label class="control-label" for="Vehicle_RegNr">RegNr</label>
+    <input class="form-control" type="text" data-val="true" data-val-required="The RegNr field is required." id="Vehicle_RegNr" 
+        maxlength="32" name="Vehicle.RegNr" value.bind="vehicle.regNr" />
+</div>
+<div class="form-group">
+    <label class="control-label" for="Vehicle_VehicleTypeId">VehicleTypeId</label>
+    <select value.bind="vehicle.vehicleTypeId" class="form-control" data-val="true" data-val-required="The VehicleTypeId field is required."
+        id="Vehicle_VehicleTypeId" name="Vehicle.VehicleTypeId">
+        <option>-- Please Select --</option>
+        <option repeat.for="item of vTypes"  value.bind="item.id">${item.vehicleTypeName} </option>
+    </select>
+</div>

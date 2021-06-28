@@ -1,0 +1,54 @@
+<h1>Index</h1>
+
+<p>
+    <a load="/vehicle-create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Make
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                ReleaseDate
+            </th>
+            <th>
+                RegNr
+            </th>
+            
+            <th>
+                Name
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr repeat.for="item of data">
+            <td>
+                ${item.make}
+            </td>
+            <td>
+                ${item.model}
+            </td>
+            <td>
+                ${item.releaseDate}
+            </td>
+            <td>
+                ${item.regNr}
+            </td>
+            <td>
+                ${getTypeById(item.vehicleTypeId)}
+            </td>
+            
+            <td>
+                <a load="/vehicle-edit(${item.id})">Edit</a> |
+                <a load="/vehicles-details(${item.id})">Details</a> |
+                <a load="/vehicle-delete(${item.id})">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,16 @@
+<import from="../../components/vehicle-details-element"/>
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+
+
+    <vehicle-details-element data.bind="data"></vehicle-details-element>
+
+    <form method="post">
+        <input  click.delegate="deleteClicked($event)" type="submit" value="Delete" class="btn btn-danger" /> |
+        <a load="/vehicles-index">Back to List</a>
+    </form>
+</div>

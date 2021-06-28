@@ -1,0 +1,50 @@
+<import from="./views/home/home-index.html"/>
+<import from="./views/identity/identity-login"/>
+<import from="./views/identity/identity-register"/>
+
+<import from="./views/vehicles/vehicles-index"/>
+<import from="./views/vehicles/vehicles-details"/>
+<import from="./views/vehicles/vehicle-create"/>
+<import from="./views/vehicles/vehicle-edit"/>
+<import from="./views/vehicles/vehicle-delete"/>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" load="home-index">WebApp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li show.bind="state.token != null" class="nav-item">
+                        <a class="nav-link text-dark" load="vehicles-index">Vehicles</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li show.bind="state.token == null" class="nav-item">
+                        <a class="nav-link text-dark"  load="identity-register">Register</a>
+                    </li>
+                    <li show.bind="state.token == null" class="nav-item">
+                        <a class="nav-link text-dark" load="identity-login">Login</a>
+                    </li>
+                    <li show.bind="state.token != null" class="nav-item">
+                        <a class="nav-link text-dark" click.delegate="logOut($event)">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        <au-viewport default="home-index"></au-viewport>
+    </main>
+</div>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2021 - WebApp - <a href="/Home/Privacy">Privacy</a>
+    </div>
+</footer>
